@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitbit Redirect</title>
+</head>
+<body>
+  <h1>Fitbit Authorization Code</h1>
+  <p id="code">Waiting for authorization code...</p>
+
+  <script>
+    // Obtener el parámetro "code" de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+
+    // Mostrar el código en pantalla
+    if (code) {
+      document.getElementById('code').innerText = `Authorization Code: ${code}`;
+    } else {
+      document.getElementById('code').innerText = "No authorization code found.";
+    }
+  </script>
+</body>
+</html>
